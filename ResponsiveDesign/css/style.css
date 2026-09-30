@@ -1,0 +1,131 @@
+/* ==========================================================
+   MOBILE VIEW (default, mobile-first: no media query)
+   ========================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #dedede;
+    color: #000000;
+    padding: 5px;
+    margin: 15px;
+    font-size: 25px;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.95em;
+}
+
+h2 {
+    text-align: center;
+}
+
+li {
+    margin-top: 20px;
+}
+
+a {
+    color: #0a2a8f;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* One column grid, 10px gap between rows and columns */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+figure {
+    margin: 0;
+    padding: 15px;
+    background-color: #ffffff;
+    color: #1b1f3b;
+    border: 5px solid #1b1f3b;
+    text-align: center;
+}
+
+figure img {
+    display: block;
+    width: min(100%, 320px);
+    height: auto;
+    margin: 0 auto;
+    border: 5px solid #1f3a93;
+    border-radius: 35px;
+}
+
+figcaption {
+    font-size: 0.8em;
+    padding-top: 10px;
+}
+
+.label {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* ==========================================================
+   TABLET VIEW (772px and up)
+   ========================================================== */
+@media (min-width: 772px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    figure {
+        border-radius: 50%;
+        padding: 12% 22%;
+    }
+
+    figure:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ==========================================================
+   LARGE SCREEN VIEW (992px and up)
+   ========================================================== */
+@media (min-width: 992px) {
+    figure {
+        border-radius: 0;
+        padding: 15px;
+    }
+
+    figure:nth-child(3n) {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ==========================================================
+   USER PREFERENCE: reduced motion
+   ========================================================== */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ==========================================================
+   USER PREFERENCE: dark color scheme
+   ========================================================== */
+@media (prefers-color-scheme: dark) {
+    figure {
+        background-color: #14163a;
+        color: #ffe88a;
+        border-color: #000000;
+    }
+}
